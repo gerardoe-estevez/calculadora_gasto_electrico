@@ -1,0 +1,11 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% macro render_todo(todo, delete_form) %}
+    <li>
+        <ul>Descripcion: {{ todo.to_dict().description }}</ul>
+        <ul>Consumo: {{ todo.to_dict().consumo }}W</ul>
+        <ul>Tiempo de uso Promedio Diario en horas: {{ todo.to_dict().tiempo_uso }}</ul>
+        {{ wtf.quick_form(delete_form, action=url_for('delete', todo_id=todo.id)) }}
+    </li>
+    
+{% endmacro %}

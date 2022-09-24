@@ -1,0 +1,11 @@
+-dir listar directorios
+-cd Cambiar directorio
+-pip install virtualenv Instalar entorno virtual
+-py -m venv myvenv Crear entorno virtual
+-myvenv\scripts\activate Activar entorno virtual
+-deactivate Desactivar entorno virtual
+-pip freeze Ver dependencias instaladas
+-set-executionpolicy unrestricted Powershell
+-set FLASK_APP=main.py Crear Variable identificadora de archivo de Flask
+-$env:FLASK_APP='main.py' En Powershell
+-$env:FLASK_DEBUG=1 Habilitar Debug mode

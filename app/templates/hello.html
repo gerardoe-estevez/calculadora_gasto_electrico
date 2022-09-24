@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Bienvenido
+{% endblock title %}
+
+{% block content %}
+    {% if username %}
+        <h1>Bienvenido al Himalaya, {{ username | capitalize }}</h1>
+    {% endif %}    
+
+    <div class="container">
+        <h2>Ingrese un nuevo electrodomestico</h2>
+
+        {{ wtf.quick_form(todo_form) }}
+    </div>
+
+    <ul>
+    {% for todo in todos %}
+        {{ macros.render_todo(todo, delete_form) }}
+    {% endfor %}
+    </ul>
+
+    <div>Gasto est. Diario: {{ costo }}$</div>
+    <div>Gasto est. Semanal: {{ costo_semanal }}$</div>
+    <div>Gasto est. Mensual: {{ costo_mensual }}$</div>
+
+{% endblock content %}
+
+
