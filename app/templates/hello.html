@@ -9,7 +9,7 @@
 
 {% block content %}
     {% if username %}
-        <h1>Bienvenido al Himalaya, {{ username | capitalize }}</h1>
+        <h1>Bienvenido, {{ username | capitalize }}</h1>
     {% endif %}    
 
     <div class="container">
@@ -17,17 +17,19 @@
 
         {{ wtf.quick_form(todo_form) }}
     </div>
-
-    <ul>
+<div class="result-container">
+    <ul class="lista-elec">
     {% for todo in todos %}
         {{ macros.render_todo(todo, delete_form) }}
     {% endfor %}
     </ul>
 
-    <div>Gasto est. Diario: {{ costo }}$</div>
-    <div>Gasto est. Semanal: {{ costo_semanal }}$</div>
-    <div>Gasto est. Mensual: {{ costo_mensual }}$</div>
-
+<div class="salida-container">
+    <p>Gasto est. Diario: {{ costo }}$</p>
+    <p>Gasto est. Semanal: {{ costo_semanal }}$</p>
+    <p>Gasto est. Mensual: {{ costo_mensual }}$</p>
+</div>
+</div>
 {% endblock content %}
 
 
